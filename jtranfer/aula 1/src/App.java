@@ -1,6 +1,9 @@
-import java.io.FileWriter; // Classe para escrever no arquivo
-import java.io.IOException; // Classe para tratar exceções do arquivo
-import java.util.Scanner; 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
+
 
 
 
@@ -13,6 +16,7 @@ public class App {
 
         // classe para teclado
         Scanner scanner = new Scanner(System.in); // recebe dados do teclado 
+
         System.out.println("==Pesquisa de Transporte Diário");
         System.out.println("Digite seu nome:");
         nome = scanner.nextLine();
@@ -48,6 +52,17 @@ public class App {
         // Task de amanhã: Salvar os dados no arquivo.
         // Salvar no github
 
+        // Criando e salvando os dados em txt
+        
+        try (OutputStreamWriter escrita = new OutputStreamWriter(new FileOutputStream("dados.txt", true), StandardCharsets.UTF_8)) {
+            escrita.write(nome + "," + meioTransporte + "\n");
+
+            System.out.println("Dados gravados com sucesso em UTF-8!");
+
+        } catch (IOException e) {
+            System.out.println("Erro ao gravar os dados: " + e.getMessage());
+
+        }
         
     }
 }
