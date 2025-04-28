@@ -9,7 +9,7 @@ public class AppEscola {
         String nomeAluno = teclado.nextLine();
         System.out.println("Qual sua idade? ");
         int idadeAluno = teclado.nextInt();
-        System.out.println("Tem faculdade? *0 - Não, 1 - Sim");
+        System.out.println("Tem faculdade? 0 - Não, 1 - Sim");
         
         int temFaculdade = teclado.nextInt();
 
@@ -21,9 +21,10 @@ public class AppEscola {
         System.out.println(aluno.getTemFaculdade());
         if (temFaculdade == 1) {
             System.out.println("Aluno tem faculdade!");
-        } 
- 
-
+        } else if (temFaculdade == 0){
+            System.out.println("Aluno não tem faculdade!");
+        }
+        teclado.close();
         
 
 
