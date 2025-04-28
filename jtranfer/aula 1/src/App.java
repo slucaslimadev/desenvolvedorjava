@@ -12,7 +12,7 @@ public class App {
         // declaração de variáveis
         String nome; // nome funcionario
         int opcaoTransporte; // opcao transporte
-        String meioTransporte = ""; // nome do transporte
+        String meioTransporte = ""; // nome do transportes
 
         // classe para teclado
         Scanner scanner = new Scanner(System.in); // recebe dados do teclado 
